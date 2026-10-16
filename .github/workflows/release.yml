@@ -3,18 +3,24 @@ name: Release
 # Builds the plugin, attaches it to a GitHub release and uploads it to JetBrains Marketplace
 # (plugin 32608, "Earl Grey UI Theme").
 #
-# Run it from the Actions tab (Release > Run workflow > version), or push a tag such as v1.2.0.
+# Three ways to start it:
+#   * change plugin/version.txt on main (e.g. edit it on github.com) - the version comes from that file;
+#   * Actions tab > Release > Run workflow (version optional, defaults to plugin/version.txt);
+#   * push a tag such as v1.2.0.
 # The Marketplace upload needs a repository secret JETBRAINS_MARKETPLACE_TOKEN holding a permanent token
 # from https://plugins.jetbrains.com/author/me/tokens; without it the run still publishes the GitHub release.
+# To upload an already-released version once the secret is set: Actions > the Release run > Re-run all jobs.
 
 on:
+  push:
+    branches: [main]
+    paths: ['plugin/version.txt']
+    tags: ['v*']
   workflow_dispatch:
     inputs:
       version:
-        description: Version to release, higher than the last Marketplace version (e.g. 1.2.0)
-        required: true
-  push:
-    tags: ['v*']
+        description: Version to release (default plugin/version.txt); must be higher than the last Marketplace version
+        required: false
 
 permissions:
   contents: write
@@ -39,7 +45,13 @@ jobs:
       - name: Resolve version
         id: version
         run: |
-          version="${INPUT_VERSION:-${GITHUB_REF_NAME#v}}"
+          if [ -n "$INPUT_VERSION" ]; then
+            version="$INPUT_VERSION"
+          elif [ "$GITHUB_REF_TYPE" = tag ]; then
+            version="${GITHUB_REF_NAME#v}"
+          else
+            version="$(tr -d '[:space:]' < plugin/version.txt)"
+          fi
           if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "::error::version must look like 1.2.0, got '$version'"
             exit 1

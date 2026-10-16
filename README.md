@@ -32,8 +32,9 @@ The jar layout is the same as earlier releases. It also carries the Parity licen
 * a scheme name other than `EarlGrey`, or an `originalScheme` property;
 * a missing icon or license file.
 
-To release, go to **Actions → Release → Run workflow** and enter a version higher than the last Marketplace one (or
-push a tag such as `v1.2.0`). The workflow builds and validates the jar, attaches it to a GitHub release, and uploads
+To release, set [`plugin/version.txt`](plugin/version.txt) to a version higher than the last Marketplace one and
+commit it to `main`. Editing the file on github.com works. You can also use **Actions → Release → Run workflow**, or
+push a tag such as `v1.3.0`. The workflow builds and validates the jar, attaches it to a GitHub release, and uploads
 it to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/32608-earl-grey-ui-theme). The Marketplace step
 needs a repository secret `JETBRAINS_MARKETPLACE_TOKEN` holding a token from
 <https://plugins.jetbrains.com/author/me/tokens>. Without it the step is skipped, and the jar can be uploaded by hand
