@@ -1,0 +1,9 @@
+{
+  "name": "earl-grey-vscode-render",
+  "private": true,
+  "description": "Tokenizes Java with VS Code's own TextMate engine and resolves Earl Grey token colors",
+  "dependencies": {
+    "vscode-oniguruma": "2.0.1",
+    "vscode-textmate": "9.2.0"
+  }
+}
