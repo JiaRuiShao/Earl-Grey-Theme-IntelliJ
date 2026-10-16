@@ -1,35 +1,39 @@
 <idea-plugin>
-  <id>com.github.jiaruishao.earlgrey</id>
-  <name>Earl Grey Color Scheme</name>
+  <id>wtf.halt.earlgrey.theme</id>
+  <name>Earl Grey UI Theme</name>
   <version>@VERSION@</version>
-  <vendor url="https://github.com/JiaRuiShao">JiaRuiShao</vendor>
+  <vendor email="" url="https://earl-grey.halt.wtf/">Earl Grey (unofficial port)</vendor>
 
   <description><![CDATA[
-    <p>A gentle light editor color scheme: an unofficial port of
-    <a href="https://earl-grey.halt.wtf">Earl Grey</a> by June Kelly, matched token by token to what the
-    Earl Grey VS Code theme paints for Java.</p>
-    <ul>
-      <li>Types and methods in warm gray italics, fields, parameters and locals in slate blue, type parameters in amber.</li>
-      <li>Every Java highlighting key is defined, so no stock IDE colors (purple fields, underlined reassigned
-          variables, olive annotations) leak through.</li>
-      <li>Console colors, diff, search and inlay hint colors from the same palette.</li>
-      <li>Ships colors for the Rainbow Brackets (Lite) plugin; set its number of colors to 6 to get VS Code's
-          bracket pair colors.</li>
-    </ul>
-    <p>Select it in <b>Settings | Editor | Color Scheme</b>. Works best with a light IDE theme.</p>
-    <p>Earl Grey is licensed under the Parity Public License 7.0.0; source code:
-    <a href="https://github.com/earl-grey-theme/earl-grey-vsc">earl-grey-theme/earl-grey-vsc</a>.</p>
+    A gentle, low-contrast light UI theme for IntelliJ-based IDEs, following the design
+    principles of Earl Grey (https://earl-grey.halt.wtf/). Aligns tool window backgrounds
+    (Project, Structure, etc.), editor syntax highlighting, and Java/file-type node icons
+    with the Earl Grey palette. Java syntax highlighting is matched token by token to the
+    Earl Grey VS Code theme with Red Hat's Java extension. Borderless, solid-color icon style
+    throughout, except folder icons which use an outlined style. Custom-built for personal use;
+    some New UI (expui) icon paths were reverse-engineered via UI Inspector rather than sourced
+    from official JetBrains assets, so exact vector fidelity to stock icons is not guaranteed.
   ]]></description>
 
   <change-notes><![CDATA[
-    <p>@VERSION@: first release. Java highlighting verified character by character against VS Code
-    with Red Hat's Java extension.</p>
+    <p>@VERSION@</p>
+    <ul>
+      <li>Java highlighting now matches the Earl Grey VS Code theme: method names, type parameters,
+          annotations, fields, constants, parameters, record components, Javadoc tags and punctuation were
+          previously falling back to IDE defaults because the scheme used key names IntelliJ does not know.</li>
+      <li>Every Java color key is now set explicitly, so no stock colors (purple fields, underlined reassigned
+          variables) show through.</li>
+      <li>Diff, search, inlay hint, inspection and console colors from the Earl Grey palette.</li>
+      <li>Colors for the Rainbow Brackets (Lite) plugin; set its number of colors to 6 to get VS Code's
+          bracket pair colors.</li>
+    </ul>
   ]]></change-notes>
 
-  <idea-version since-build="223"/>
+  <idea-version since-build="203.0"/>
+
   <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <bundledColorScheme id="Earl Grey" path="/colors/EarlGrey"/>
+    <themeProvider id="EarlGreyTheme" path="/earlgrey.theme.json"/>
   </extensions>
 </idea-plugin>

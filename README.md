@@ -1,6 +1,7 @@
 # Earl Grey for IntelliJ IDEA
 
-An IntelliJ IDEA / JetBrains editor color scheme that paints Java the way the
+Source of the [Earl Grey UI Theme](https://plugins.jetbrains.com/plugin/32608-earl-grey-ui-theme) plugin: a light
+UI theme plus an editor color scheme. The scheme paints Java the way the
 [Earl Grey](https://earl-grey.halt.wtf) VS Code theme does, checked token by token against what VS Code
 (with Red Hat's *Language Support for Java*) actually renders.
 
@@ -10,21 +11,23 @@ An IntelliJ IDEA / JetBrains editor color scheme that paints Java the way the
 
 ## Install
 
-Either:
+Use **one** of these, not both: each adds its own entry to *Settings → Editor → Color Scheme*.
 
-* **As a plugin:** *Settings → Plugins → Marketplace*, search "Earl Grey Color Scheme" (or ⚙ → *Install Plugin from
-  Disk…* with a jar built by `tools/build-plugin.sh`). Then pick **Earl Grey** in *Settings → Editor → Color Scheme*.
-* **As a scheme file:** *Settings → Editor → Color Scheme → ⚙ → Import Scheme…* and pick
-  [`Earl Grey.icls`](Earl%20Grey.icls).
+* **Plugin (recommended):** *Settings → Plugins → Marketplace*, search **Earl Grey UI Theme**. Pick **Earl Grey** in
+  *Settings → Appearance & Behavior → Appearance → Theme*, and **EarlGrey** in *Settings → Editor → Color Scheme*.
+* **Editor colors only:** *Settings → Editor → Color Scheme → ⚙ → Import Scheme…* and pick
+  [`Earl Grey.icls`](Earl%20Grey.icls). It appears as **Earl Grey**.
 
-Use a light IDE theme (*IntelliJ Light* / *Light*), since the scheme is built on the light `Default` scheme.
+The scheme is built on the light `Default` scheme, so pair it with a light IDE theme.
 
 ### Building and publishing the plugin
 
-`tools/build-plugin.sh 1.0.0` writes `build/earl-grey-color-scheme-1.0.0.jar`. It is a resource-only plugin: it
-registers the scheme through `com.intellij.bundledColorScheme` and carries the Parity license text, as the license
-requires. JetBrains takes a new plugin's first version only through the upload form at
-<https://plugins.jetbrains.com/plugin/add>. Later versions can be uploaded there or with a Marketplace token.
+`tools/build-plugin.sh 1.2.0` writes `build/EarlGreyTheme-1.2.0.jar` (plugin id `wtf.halt.earlgrey.theme`):
+* the UI theme and icons from [`plugin/`](plugin);
+* `EarlGrey.xml`, generated from [`Earl Grey.icls`](Earl%20Grey.icls) under the published scheme name `EarlGrey`.
+
+The jar layout is the same as earlier releases. It also carries the Parity license text, as the license requires.
+Upload new versions from the plugin's page on JetBrains Marketplace, with a version number higher than the last one.
 
 For the closest match to VS Code:
 

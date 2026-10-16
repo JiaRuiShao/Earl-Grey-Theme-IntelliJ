@@ -1,0 +1,352 @@
+{
+  "name": "Earl Grey",
+  "dark": false,
+  "author": "Earl Grey (unofficial IntelliJ port)",
+  "editorScheme": "/EarlGrey.xml",
+
+  "colors": {
+    "eg.background": "#FCFBF9",
+    "eg.backgroundAlt": "#F7F3EE",
+    "eg.foreground": "#605A52",
+    "eg.foregroundAlt": "#5A544C",
+    "eg.purple": "#83577D",
+    "eg.purple2": "#E4DAE0",
+    "eg.purple1": "#F0EBED",
+    "eg.blue": "#556995",
+    "eg.blue2": "#DBDEE5",
+    "eg.teal": "#477A7B",
+    "eg.green": "#747B4D",
+    "eg.orange": "#886A44",
+    "eg.red": "#8F5652",
+    "eg.comment": "#9E9A95",
+    "eg.grey1": "#ECEBE8",
+    "eg.grey2": "#DDDBD8",
+    "eg.grey3": "#CDCBC7",
+    "eg.grey4": "#BEBBB6",
+    "eg.berry": "#AA5087",
+    "eg.berry2": "#ECD9E2"
+  },
+
+  "icons": {
+    "expui": {
+      "nodes": {
+        "class.svg": "/class.svg",
+        "abstractClass.svg": "/abstractClass.svg",
+        "interface.svg": "/interface.svg",
+        "enum.svg": "/enum.svg",
+        "annotationtype.svg": "/annotationtype.svg",
+        "exceptionClass.svg": "/exceptionClass.svg",
+        "field.svg": "/field.svg",
+        "method.svg": "/method.svg",
+        "folder.svg": "/folder.svg",
+        "package.svg": "/package.svg",
+        "sourceRoot.svg": "/sourceRoot.svg",
+        "excludeRoot.svg": "/excludeRoot.svg",
+        "runnableMark.svg": "/runnableMark.svg"
+      },
+      "fileTypes": {
+        "java.svg": "/java.svg",
+        "css.svg": "/css.svg",
+        "archive.svg": "/archive.svg",
+        "image.svg": "/image.svg"
+      },
+      "runConfigurations": {
+        "invalidConfigurationLayer.svg": "/invalidConfigurationLayer.svg"
+      },
+      "gutter": {
+        "implementedMethod.svg": "/implementedMethod.svg",
+        "implementingMethod.svg": "/implementingMethod.svg"
+      },
+      "run": {
+        "run.svg": "/run.svg",
+        "debug.svg": "/debug.svg"
+      }
+    },
+    "/nodes/class.svg": "/class.svg",
+    "/nodes/abstractClass.svg": "/abstractClass.svg",
+    "/nodes/interface.svg": "/interface.svg",
+    "/nodes/enum.svg": "/enum.svg",
+    "/nodes/annotationtype.svg": "/annotationtype.svg",
+    "/nodes/exceptionClass.svg": "/exceptionClass.svg",
+    "/nodes/field.svg": "/field.svg",
+    "/nodes/method.svg": "/method.svg",
+    "/nodes/folder.svg": "/folder.svg",
+    "/nodes/package.svg": "/package.svg",
+    "/nodes/sourceRoot.svg": "/sourceRoot.svg",
+    "/nodes/excludeRoot.svg": "/excludeRoot.svg",
+    "/nodes/runnableMark.svg": "/runnableMark.svg",
+    "/fileTypes/java.svg": "/java.svg",
+    "/fileTypes/css.svg": "/css.svg",
+    "/fileTypes/archive.svg": "/archive.svg",
+    "/fileTypes/image.svg": "/image.svg",
+    "/runConfigurations/invalidConfigurationLayer.svg": "/invalidConfigurationLayer.svg",
+    "/gutter/implementedMethod.svg": "/implementedMethod.svg",
+    "/gutter/implementingMethod.svg": "/implementingMethod.svg",
+    "/run/run.svg": "/run.svg",
+    "/run/debug.svg": "/debug.svg",
+    "/actions/execute.svg": "/run.svg",
+    "/actions/startDebugger.svg": "/debug.svg",
+    "ColorPalette": {
+      "Objects.Blue": "#83577D",
+      "Objects.BlackText": "#605A52",
+      "Objects.Grey": "#9E9A95",
+      "Objects.Green": "#747B4D",
+      "Objects.Yellow": "#886A44",
+      "Objects.YellowDark": "#886A44",
+      "Objects.Purple": "#83577D",
+      "Objects.Pink": "#AA5087",
+      "Objects.Red": "#8F5652",
+      "Objects.RedStatus": "#8F5652",
+      "Actions.Blue": "#556995",
+
+      "#DB5860": "#8F5652",
+      "#C75450": "#8F5652",
+      "#DB5C5C": "#8F5652",
+      "#E55765": "#8F5652",
+      "#F26522": "#8F5652",
+      "#E05555": "#8F5652",
+
+      "#59A869": "#747B4D",
+      "#499C54": "#747B4D",
+      "#55A76A": "#747B4D",
+      "#62B543": "#747B4D",
+
+      "#389FD6": "#556995",
+      "#3592C4": "#556995",
+      "#3574F0": "#556995",
+      "#40B6E0": "#556995",
+      "#2E88FF": "#556995",
+
+      "#EDA200": "#886A44",
+      "#F0A732": "#886A44",
+      "#E5A50A": "#886A44",
+      "#F4AF3D": "#886A44",
+      "#D9A343": "#886A44",
+
+      "#6E6E6E": "#605A52",
+      "#AFB1B3": "#9E9A95",
+      "#6C707E": "#605A52",
+      "#CED0D6": "#605A52",
+      "#9AA7B0": "#9E9A95",
+
+      "#B99BF8": "#83577D",
+      "#F98B9E": "#AA5087"
+    }
+  },
+
+  "ui": {
+    "*": {
+      "background": "eg.background",
+      "foreground": "eg.foreground",
+      "selectionBackground": "eg.purple2",
+      "selectionForeground": "eg.foreground",
+      "selectionInactiveBackground": "eg.grey1",
+      "selectionInactiveForeground": "eg.foreground",
+      "borderColor": "eg.grey2",
+      "disabledBorderColor": "eg.grey1",
+      "disabledForeground": "eg.grey4",
+      "acceleratorForeground": "eg.foregroundAlt",
+      "infoForeground": "eg.comment"
+    },
+
+    "ToolWindow": {
+      "background": "eg.backgroundAlt",
+      "Header.background": "eg.backgroundAlt",
+      "Header.inactiveBackground": "eg.backgroundAlt",
+      "Header.borderColor": "eg.grey2",
+      "Header.closeButtonBackground": "eg.backgroundAlt",
+      "HeaderTab.background": "eg.backgroundAlt",
+      "HeaderTab.inactiveBackground": "eg.backgroundAlt",
+      "HeaderTab.hoverBackground": "eg.grey1",
+      "HeaderTab.hoverInactiveBackground": "eg.grey1",
+      "HeaderTab.underlinedTabBackground": "eg.background",
+      "HeaderTab.underlinedTabInactiveBackground": "eg.background",
+      "HeaderTab.selectedInactiveBackground": "eg.background",
+      "HeaderTab.underlineColor": "eg.purple",
+      "HeaderTab.underlineHeight": 2,
+      "HeaderCloseButton.background": "eg.backgroundAlt"
+    },
+
+    "ToolWindow.Button": {
+      "selectedBackground": "eg.purple2",
+      "hoverBackground": "eg.grey1"
+    },
+
+    "Tree": {
+      "background": "eg.backgroundAlt",
+      "foreground": "eg.foreground",
+      "selectionBackground": "eg.purple2",
+      "selectionForeground": "eg.foreground",
+      "selectionInactiveBackground": "eg.grey1",
+      "selectionInactiveForeground": "eg.foreground",
+      "hash.background": "eg.backgroundAlt",
+      "row.height": 22
+    },
+
+    "List": {
+      "background": "eg.backgroundAlt",
+      "foreground": "eg.foreground",
+      "selectionBackground": "eg.purple2",
+      "selectionInactiveBackground": "eg.grey1"
+    },
+
+    "Table": {
+      "background": "eg.backgroundAlt",
+      "foreground": "eg.foreground",
+      "selectionBackground": "eg.purple2",
+      "gridColor": "eg.grey2",
+      "lightSelectionBackground": "eg.grey1"
+    },
+
+    "Panel": {
+      "background": "eg.backgroundAlt",
+      "foreground": "eg.foreground"
+    },
+
+    "ProjectViewTree": {
+      "background": "eg.backgroundAlt"
+    },
+
+    "SpeedSearch": {
+      "background": "eg.berry2",
+      "foreground": "eg.foreground",
+      "borderColor": "eg.berry"
+    },
+
+    "EditorTabs": {
+      "background": "eg.grey1",
+      "underlinedTabBackground": "eg.background",
+      "inactiveUnderlineColor": "eg.grey3",
+      "underlineColor": "eg.purple",
+      "underlineHeight": 2,
+      "hoverBackground": "eg.grey2",
+      "hoverInactiveBackground": "eg.grey2"
+    },
+
+    "MainToolbar": {
+      "background": "eg.backgroundAlt"
+    },
+
+    "MainWindow": {
+      "background": "eg.backgroundAlt"
+    },
+
+    "StatusBar": {
+      "background": "eg.backgroundAlt",
+      "borderColor": "eg.grey2",
+      "foreground": "eg.comment"
+    },
+
+    "ToolBar": {
+      "background": "eg.backgroundAlt"
+    },
+
+    "ActionButton": {
+      "hoverBackground": "eg.grey1",
+      "pressedBackground": "eg.grey2"
+    },
+
+    "Menu": {
+      "background": "eg.background",
+      "foreground": "eg.foreground",
+      "selectionBackground": "eg.purple2",
+      "borderColor": "eg.grey2"
+    },
+
+    "MenuItem": {
+      "background": "eg.background",
+      "foreground": "eg.foreground",
+      "selectionBackground": "eg.purple2",
+      "acceleratorForeground": "eg.comment"
+    },
+
+    "PopupMenu": {
+      "background": "eg.background",
+      "border": "eg.grey2"
+    },
+
+    "Popup": {
+      "background": "eg.background",
+      "borderColor": "eg.grey2",
+      "Header.activeBackground": "eg.backgroundAlt",
+      "Header.inactiveBackground": "eg.backgroundAlt"
+    },
+
+    "ScrollBar": {
+      "thumbColor": "eg.grey3",
+      "thumbBorderColor": "eg.grey3",
+      "trackColor": "eg.backgroundAlt",
+      "hoverThumbColor": "eg.grey4"
+    },
+
+    "Button": {
+      "background": "eg.grey1",
+      "startBackground": "eg.grey1",
+      "endBackground": "eg.grey1",
+      "foreground": "eg.foreground",
+      "borderColor": "eg.grey3",
+      "default": {
+        "startBackground": "eg.purple2",
+        "endBackground": "eg.purple2",
+        "foreground": "eg.foreground",
+        "focusedBorderColor": "eg.purple"
+      }
+    },
+
+    "TextField": {
+      "background": "eg.background",
+      "foreground": "eg.foreground",
+      "borderColor": "eg.grey3"
+    },
+
+    "TextArea": {
+      "background": "eg.background",
+      "foreground": "eg.foreground"
+    },
+
+    "ComboBox": {
+      "background": "eg.background",
+      "foreground": "eg.foreground",
+      "ArrowButton.background": "eg.background"
+    },
+
+    "CheckBox": {
+      "background": "eg.backgroundAlt"
+    },
+
+    "TabbedPane": {
+      "background": "eg.backgroundAlt",
+      "underlineColor": "eg.purple",
+      "hoverColor": "eg.grey1"
+    },
+
+    "Notification": {
+      "background": "eg.backgroundAlt",
+      "foreground": "eg.foreground",
+      "borderColor": "eg.grey2",
+      "ToolWindow.informativeBackground": "eg.purple1",
+      "ToolWindow.errorBackground": "#F1EBE8",
+      "ToolWindow.warningBackground": "#F0EDE7"
+    },
+
+    "SearchEverywhere": {
+      "background": "eg.background",
+      "SearchField.background": "eg.background",
+      "List.background": "eg.background"
+    },
+
+    "VersionControl.Log.Commit": {
+      "Reference.foreground": "eg.blue"
+    },
+
+    "Component.borderColor": "eg.grey2",
+    "Component.focusedBorderColor": "eg.purple",
+
+    "Link": {
+      "activeForeground": "eg.blue",
+      "hoverForeground": "eg.purple",
+      "visitedForeground": "eg.blue",
+      "pressedForeground": "eg.purple"
+    }
+  }
+}
