@@ -10,8 +10,21 @@ An IntelliJ IDEA / JetBrains editor color scheme that paints Java the way the
 
 ## Install
 
-1. **Settings → Editor → Color Scheme → ⚙ → Import Scheme…** and pick [`Earl Grey.icls`](Earl%20Grey.icls).
-2. Use a light IDE theme (*IntelliJ Light* / *Light*), since the scheme is built on the light `Default` scheme.
+Either:
+
+* **As a plugin:** *Settings → Plugins → Marketplace*, search "Earl Grey Color Scheme" (or ⚙ → *Install Plugin from
+  Disk…* with a jar built by `tools/build-plugin.sh`). Then pick **Earl Grey** in *Settings → Editor → Color Scheme*.
+* **As a scheme file:** *Settings → Editor → Color Scheme → ⚙ → Import Scheme…* and pick
+  [`Earl Grey.icls`](Earl%20Grey.icls).
+
+Use a light IDE theme (*IntelliJ Light* / *Light*), since the scheme is built on the light `Default` scheme.
+
+### Building and publishing the plugin
+
+`tools/build-plugin.sh 1.0.0` writes `build/earl-grey-color-scheme-1.0.0.jar`. It is a resource-only plugin: it
+registers the scheme through `com.intellij.bundledColorScheme` and carries the Parity license text, as the license
+requires. JetBrains takes a new plugin's first version only through the upload form at
+<https://plugins.jetbrains.com/plugin/add>. Later versions can be uploaded there or with a Marketplace token.
 
 For the closest match to VS Code:
 
