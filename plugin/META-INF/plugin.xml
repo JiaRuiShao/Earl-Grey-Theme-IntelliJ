@@ -26,6 +26,9 @@
       <li>Diff, search, inlay hint, inspection and console colors from the Earl Grey palette.</li>
       <li>Colors for the Rainbow Brackets (Lite) plugin; set its number of colors to 6 to get VS Code's
           bracket pair colors.</li>
+      <li>If <i>Settings | Editor | Color Scheme</i> lists Earl Grey more than once: <b>EarlGrey</b> (no space) is this
+          plugin's scheme. Entries named <b>Earl Grey</b> or <b>Earl Grey copy</b> are imported or copied schemes;
+          select one and use the gear menu's <i>Delete</i> to remove it.</li>
     </ul>
   ]]></change-notes>
 

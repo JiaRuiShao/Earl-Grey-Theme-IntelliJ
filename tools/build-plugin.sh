@@ -4,11 +4,11 @@
 # Layout matches the published 1.1.0 jar: /earlgrey.theme.json, /EarlGrey.xml and the node icons at the jar root,
 # so existing installs keep their paths. The editor scheme is generated from "Earl Grey.icls" and keeps the
 # published scheme name "EarlGrey" (renaming it would leave users with an orphaned copy of the old name).
-# Usage: tools/build-plugin.sh [version]   (default 1.2.0). Needs Python 3 and a JDK for the `jar` tool.
+# Usage: tools/build-plugin.sh [version]   (default: plugin/version.txt). Needs Python 3 and a JDK for the `jar` tool.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-VERSION="${1:-1.2.0}"
+VERSION="${1:-$(tr -d '[:space:]' < "$ROOT/plugin/version.txt")}"
 STAGE="$ROOT/build/plugin"
 OUT="$ROOT/build/EarlGreyTheme-$VERSION.jar"
 

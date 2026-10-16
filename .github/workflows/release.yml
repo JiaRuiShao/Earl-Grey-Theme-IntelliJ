@@ -59,6 +59,9 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "jar=build/EarlGreyTheme-$version.jar" >> "$GITHUB_OUTPUT"
 
+      - name: Validate Earl Grey.icls
+        run: python3 tools/validate-plugin.py --icls "Earl Grey.icls"
+
       - name: Build plugin
         run: tools/build-plugin.sh "${{ steps.version.outputs.version }}"
 

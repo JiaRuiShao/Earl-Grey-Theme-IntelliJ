@@ -16,6 +16,8 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
+      - name: Validate Earl Grey.icls
+        run: python3 tools/validate-plugin.py --icls "Earl Grey.icls"
       - name: Build plugin
         run: tools/build-plugin.sh 0.0.0-ci
       - name: Validate plugin

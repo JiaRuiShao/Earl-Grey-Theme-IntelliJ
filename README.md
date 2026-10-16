@@ -14,23 +14,54 @@ UI theme plus an editor color scheme. The scheme paints Java the way the
 Use **one** of these, not both: each adds its own entry to *Settings → Editor → Color Scheme*.
 
 * **Plugin (recommended):** *Settings → Plugins → Marketplace*, search **Earl Grey UI Theme**. Pick **Earl Grey** in
-  *Settings → Appearance & Behavior → Appearance → Theme*, and **EarlGrey** in *Settings → Editor → Color Scheme*.
+  *Settings → Appearance & Behavior → Appearance → Theme*, and **EarlGrey** (no space) in
+  *Settings → Editor → Color Scheme*. While the Earl Grey theme is active, that entry has a grey *Theme default*
+  suffix. Plugin updates bring new colors to it.
 * **Editor colors only:** *Settings → Editor → Color Scheme → ⚙ → Import Scheme…* and pick
-  [`Earl Grey.icls`](Earl%20Grey.icls). It appears as **Earl Grey**.
+  [`Earl Grey.icls`](Earl%20Grey.icls). It appears as **Earl Grey**. Importing the file again does not update it:
+  every import adds another entry (*Earl Grey copy*, *Earl Grey copy1*, …), so delete the old one first.
+
+To switch from the imported file to the plugin: select **Earl Grey**, then *⚙ → Delete*, select **EarlGrey**, and
+click *OK*.
 
 The scheme is built on the light `Default` scheme, so pair it with a light IDE theme.
 
+### More than one Earl Grey?
+
+* **EarlGrey** is the plugin's scheme. Its ⚙ menu has no *Delete*, but has *Restore Defaults*, which undoes your
+  edits to it.
+* Any entry whose ⚙ menu has *Delete* is a user scheme: an imported `.icls`, a duplicate, or a scheme you made
+  yourself. The *Delete* confirmation shows its internal name, for example *Earl Grey copy*. Delete the ones you
+  don't want.
+* An **Earl Grey** entry *without* *Delete* comes from the old *Earl Grey Color Scheme* plugin
+  (`com.github.jiaruishao.earlgrey`), which was only ever a jar built from this repository's early history. Uninstall
+  it in *Settings → Plugins*. It is replaced by *Earl Grey UI Theme*.
+* Restart the IDE after installing or uninstalling either plugin. Until the restart, IntelliJ can list a scheme twice.
+* Leftover files live in the `colors` folder of the IDE's config directory: `%APPDATA%\JetBrains\<Product><Version>`
+  on Windows, `~/Library/Application Support/JetBrains/<Product><Version>` on macOS, and
+  `~/.config/JetBrains/<Product><Version>` on Linux. Each user scheme is one `<name>.icls` file. `_@user_<name>.icls`
+  holds your edits to a plugin's scheme. After that plugin is uninstalled, the file stays on disk and is hidden.
+  It comes back as a duplicate if a scheme of the same name is imported later. So, with the IDE closed, delete
+  `_@user_Earl Grey.icls` once the old plugin is gone. Deleting `_@user_EarlGrey.icls` only throws away your edits
+  to the current plugin's scheme. Plugin schemes themselves have no file there.
+* With Settings Sync on, a deleted scheme can come back from another machine. Repeat the cleanup there.
+
 ### Building and publishing the plugin
 
-`tools/build-plugin.sh 1.2.0` writes `build/EarlGreyTheme-1.2.0.jar` (plugin id `wtf.halt.earlgrey.theme`):
+`tools/build-plugin.sh` writes `build/EarlGreyTheme-<version>.jar` (plugin id `wtf.halt.earlgrey.theme`), with the
+version from [`plugin/version.txt`](plugin/version.txt) unless one is passed as an argument. The jar contains:
 * the UI theme and icons from [`plugin/`](plugin);
 * `EarlGrey.xml`, generated from [`Earl Grey.icls`](Earl%20Grey.icls) under the published scheme name `EarlGrey`.
 
 The jar layout is the same as earlier releases. It also carries the Parity license text, as the license requires.
-`tools/validate-plugin.py <jar> <version>` rejects a jar if any of these hold:
-* a key IntelliJ does not define ([`tools/intellij-keys.txt`](tools/intellij-keys.txt));
-* a scheme name other than `EarlGrey`, or an `originalScheme` property;
-* a missing icon or license file.
+`tools/validate-plugin.py <jar> <version>` checks the jar, and `tools/validate-plugin.py --icls "Earl Grey.icls"`
+checks the file users import. CI runs both. They reject:
+* a key IntelliJ does not define ([`tools/intellij-keys.txt`](tools/intellij-keys.txt)), or a key defined twice;
+* a scheme name other than `EarlGrey` in the jar, or other than `Earl Grey` in the `.icls`;
+* an `originalScheme` or `partialSave` property. With `originalScheme`, an imported copy is listed under the label
+  of the read-only scheme it names, so it looks identical to that plugin's entry. IntelliJ's *⚙ → Export* writes
+  this property, so remove it if you ever regenerate the `.icls` by exporting;
+* a missing icon or license file in the jar.
 
 To release, set [`plugin/version.txt`](plugin/version.txt) to a version higher than the last Marketplace one and
 commit it to `main`. Editing the file on github.com works. You can also use **Actions → Release → Run workflow**, or
