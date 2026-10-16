@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Build plugin
+        run: tools/build-plugin.sh 0.0.0-ci
+      - name: Validate plugin
+        run: python3 tools/validate-plugin.py build/EarlGreyTheme-0.0.0-ci.jar 0.0.0-ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EarlGreyTheme-ci
+          path: build/EarlGreyTheme-0.0.0-ci.jar

@@ -27,7 +27,17 @@ The scheme is built on the light `Default` scheme, so pair it with a light IDE t
 * `EarlGrey.xml`, generated from [`Earl Grey.icls`](Earl%20Grey.icls) under the published scheme name `EarlGrey`.
 
 The jar layout is the same as earlier releases. It also carries the Parity license text, as the license requires.
-Upload new versions from the plugin's page on JetBrains Marketplace, with a version number higher than the last one.
+`tools/validate-plugin.py <jar> <version>` rejects a jar if any of these hold:
+* a key IntelliJ does not define ([`tools/intellij-keys.txt`](tools/intellij-keys.txt));
+* a scheme name other than `EarlGrey`, or an `originalScheme` property;
+* a missing icon or license file.
+
+To release, go to **Actions → Release → Run workflow** and enter a version higher than the last Marketplace one (or
+push a tag such as `v1.2.0`). The workflow builds and validates the jar, attaches it to a GitHub release, and uploads
+it to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/32608-earl-grey-ui-theme). The Marketplace step
+needs a repository secret `JETBRAINS_MARKETPLACE_TOKEN` holding a token from
+<https://plugins.jetbrains.com/author/me/tokens>. Without it the step is skipped, and the jar can be uploaded by hand
+from the release.
 
 For the closest match to VS Code:
 

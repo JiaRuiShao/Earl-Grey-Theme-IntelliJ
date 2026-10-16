@@ -30,9 +30,11 @@ root = tree.getroot()
 NAME = "EarlGrey"  # the name published in 1.0/1.1: users' selected scheme is stored under it
 root.set("name", NAME)
 meta = root.find("metaInfo")
+# No "originalScheme": IntelliJ writes it on the visible _@user_ copy itself (EditorColorsSchemeImpl.clone ->
+# setDefaultMetaInfo), and in an imported copy it makes the import borrow this scheme's label (a lookalike duplicate).
 for prop in meta.findall("property"):
     if prop.get("name") == "originalScheme":
-        prop.text = NAME  # must be the scheme's own name: the _@user_ copy takes its display name from it
+        meta.remove(prop)
 desc = ET.SubElement(meta, "property", {"name": "description"})
 desc.text = ("A gentle, low-contrast light theme, following the design principles of Earl Grey "
              "(https://earl-grey.halt.wtf/).")
