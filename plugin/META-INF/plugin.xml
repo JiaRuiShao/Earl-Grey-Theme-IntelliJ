@@ -18,17 +18,12 @@
   <change-notes><![CDATA[
     <p>@VERSION@</p>
     <ul>
-      <li>Java highlighting now matches the Earl Grey VS Code theme: method names, type parameters,
-          annotations, fields, constants, parameters, record components, Javadoc tags and punctuation were
-          previously falling back to IDE defaults because the scheme used key names IntelliJ does not know.</li>
-      <li>Every Java color key is now set explicitly, so no stock colors (purple fields, underlined reassigned
-          variables) show through.</li>
+      <li>Java highlighting matched token by token to the Earl Grey VS Code theme: classes, methods, type parameters,
+          annotations, fields, constants, parameters, record components, Javadoc tags and punctuation.</li>
+      <li>Every Java color setting is defined by the scheme, so the whole editor stays in the Earl Grey palette.</li>
       <li>Diff, search, inlay hint, inspection and console colors from the Earl Grey palette.</li>
-      <li>Colors for the Rainbow Brackets (Lite) plugin; set its number of colors to 6 to get VS Code's
+      <li>Earl Grey colors for the Rainbow Brackets (Lite) plugin; set its number of colors to 6 for matching
           bracket pair colors.</li>
-      <li>If <i>Settings | Editor | Color Scheme</i> lists Earl Grey more than once: <b>EarlGrey</b> (no space) is this
-          plugin's scheme. Entries named <b>Earl Grey</b> or <b>Earl Grey copy</b> are imported or copied schemes;
-          select one and use the gear menu's <i>Delete</i> to remove it.</li>
     </ul>
   ]]></change-notes>
 
