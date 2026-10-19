@@ -5,14 +5,9 @@
   <vendor email="" url="https://earl-grey.halt.wtf/">Earl Grey (unofficial port)</vendor>
 
   <description><![CDATA[
-    A gentle, low-contrast light UI theme for IntelliJ-based IDEs, following the design
-    principles of Earl Grey (https://earl-grey.halt.wtf/). Aligns tool window backgrounds
-    (Project, Structure, etc.), editor syntax highlighting, and Java/file-type node icons
-    with the Earl Grey palette. Java syntax highlighting is matched token by token to the
-    Earl Grey VS Code theme with Red Hat's Java extension. Borderless, solid-color icon style
-    throughout, except folder icons which use an outlined style. Custom-built for personal use;
-    some New UI (expui) icon paths were reverse-engineered via UI Inspector rather than sourced
-    from official JetBrains assets, so exact vector fidelity to stock icons is not guaranteed.
+    A gentle, low-contrast light theme for JetBrains IDEs, following the design principles of
+    <a href="https://earl-grey.halt.wtf/">Earl Grey</a>. Includes a matching editor color scheme, with Java
+    highlighting matched to the Earl Grey VS Code theme, and solid-color Earl Grey icons.
   ]]></description>
 
   <change-notes><![CDATA[
